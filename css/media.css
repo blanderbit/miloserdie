@@ -1,0 +1,119 @@
+
+@media screen and (max-width: 1360px){
+    .head{
+        width:90%;
+    }
+    .containe_catalog_width,.in_button {
+        width: 100%;
+    }
+}
+@media screen and (max-width: 1024px){
+    .head_footer{
+        width:auto;
+    }
+}
+@media screen and (max-width: 720px){
+    .head{
+        font-size: 10px;
+    }.head img{
+        width:80px!important;
+    }
+    header .head a ion-icon{
+        font-size: 15px;
+    }
+    .lists > li{
+        float: none;
+    }
+    .lists{
+        position: absolute;
+        text-align: left;
+        width: 100%;
+        left:-100%;
+        border-bottom: 1px solid lightgray;
+    }
+    .icon{
+        display:block
+    }
+    .two-icon{
+        position: absolute;
+        right: 0px;
+        top:0px;
+    }
+    .lists > li{
+        list-style: none;
+        padding: 0px;
+    }
+    .lists  a:hover{
+        background: hotpink;
+        color:white;
+    }
+    .lists  a {
+        width: 100%;
+        box-sizing: border-box;
+        display: inline-block;
+    }
+    .m-container{
+        width: auto;
+    }
+    .container_photo{
+        height: 250px;
+    }
+    .massage_before_catalog .before_catalog{
+        font-size: 13px;
+    }
+    .help_main_text{
+        font-size: 13px;
+    }
+    .containar_one {
+        width: 40%;
+    }
+    .in_button{
+        justify-content: center;
+    }
+    .button_to{
+        margin:0;
+    }
+    .contant_footer{
+        font-size: 10px;
+    }
+    .block_with_person{
+        flex-wrap: wrap;
+        border-bottom: 1px solid rgba(194, 194, 194, 0.64);
+        padding-bottom: 10px;
+    }
+    .block_with_person:last-child{
+        border-bottom:none;
+        margin-bottom: 0px;
+        padding-bottom: 0px;
+    }
+    .img_with_person{
+        order: 0!important;
+    }
+    .text_with_person{
+        font-size: 14px;
+    }
+}
+@media screen and (max-width: 420px){
+    section{
+        width: 103%;
+    }
+    .containar_one {
+        width: 60%;
+    }
+    .img_with_person{
+        height: 200px;
+    }
+
+}
+@media screen and (max-width: 320px){
+    section{
+        width: 105%;
+    }
+    .containar_one {
+        width: 70%;
+    }
+    .img_with_person{
+        height: 200px;
+    }
+
+}
