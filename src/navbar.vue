@@ -1,7 +1,7 @@
 <template>
     <header>
         <div class="head">
-            <img src="src/assets/main/logo.jpg" width="100px">
+            <img src="../src/assets/main/logo.jpg" width="100px">
             <div>
                 <div>Приют для животных</div>
                 <span style="font-weight: bold;margin-top: 20px;display: inline-block">"Милосердие"</span>

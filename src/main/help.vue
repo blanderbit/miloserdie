@@ -16,7 +16,7 @@
             <div class="help_person_container">
                 <h4>Нам помогают</h4>
                 <div class="block_with_person" v-for="arrOne in persons">
-                    <div class="img_with_person" :style="{background:'url('+arrOne.image+')',order:arrOne.float_img}"></div>
+                    <div class="img_with_person" :style="{background:'url('+photos(arrOne.image)+')',order:arrOne.float_img}"></div>
                     <div class="text_with_person">
                         <h4 style="text-align: center">{{arrOne.name}}</h4>
                         <p>
@@ -32,11 +32,19 @@
 
 </style>
 <script>
+    import axios from 'axios'
     export default {
         data(){
             return{
                 container:helps.main,
                 persons:helps.person
+            }
+        },
+        methods:{
+            photos:function(url){
+                let main_url = url.indexOf('https://')
+                let main_url2 = url.indexOf('http://')
+                return main_url == 0 || main_url2 == 0 ? url: window.location.origin + url.substr(2,url.length)
             }
         },
     }

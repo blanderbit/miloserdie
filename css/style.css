@@ -76,6 +76,7 @@ header .head a:hover{
     box-sizing: border-box;
 }
 .lists{
+    z-index: 1000;
     padding: 0px;
     margin:0px;
     transition: all 0.4s;
@@ -325,4 +326,114 @@ footer{
 .text_with_person{
     width:100%;
     text-align: justify;
+}
+/*rubricsOne.vue*/
+.one_of_the_catalog{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    width: 900px;
+    padding: 20px;
+}
+.albums{
+    width: 900px;
+    display: flex;
+    justify-content: flex-start;
+    padding: 20px;
+    border-top:1px solid black;
+    border-bottom:1px solid black;
+}
+.one_photo{
+    width: 100%;
+    height: 200px;
+    background-size: contain!important;
+    background-repeat: no-repeat!important;
+    background-position: center!important;
+}
+.information{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+}
+/*rubrics*/
+.containe_catalog_width_rubriks{
+    justify-content: center;
+}
+.search{
+    width: 900px;
+    display: flex;
+    justify-content: center;
+}
+.searchList,.searchListHidden{
+    display: flex;
+    list-style: none;
+    padding-left: 6px;
+    justify-content: space-between;
+}
+.searchListHidden{
+    display: none
+}
+.searchList2{
+    display: none;
+    width: 100%;
+    position: absolute;
+    list-style: none;
+    right: 0;
+    margin: 0;
+    z-index: 100;
+   box-shadow: 1px 1px 1px 1px deeppink;
+    padding:0;
+
+}
+.searchList2Hidden{
+    width: 100%;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    box-shadow: 1px 1px 1px 1px deeppink;
+    display: none;
+}
+.list1:hover > .searchList2{
+    display: block;
+}
+.list1,.list1Hidden{
+    width: 140px;
+    padding: 10px;
+    border:3px solid deeppink;
+    position: relative;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.list1Hidden{
+    width: 100%;
+    padding: 0px;
+}
+.list2,.list2Hidden{ padding: 10px;
+    background: gray;
+    cursor: pointer;
+    border-bottom: 1px solid rebeccapurple;
+    margin: 0;
+    background: linear-gradient(to right,deeppink,snow);
+}
+.list2:last-child,.list2Hidden:last-child{
+    border-bottom: none;
+}
+.list2:hover,.list2Hidden:hover{
+    background: linear-gradient(to right,snow,deeppink);
+}
+
+/*about_us*/
+.containet_about{
+    width: 900px;
+    padding: 20px;
+}
+.containet_about p{
+
+    text-align: justify;
+    text-indent: 30px;
+}
+.containet_about img {
+    margin-right: 10px;
 }

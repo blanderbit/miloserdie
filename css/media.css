@@ -12,6 +12,47 @@
         width:auto;
     }
 }
+@media screen and (max-width: 920px){
+    .search{
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    .searchList{
+        display: flex;
+        font-size: 10px;
+        flex-wrap: wrap;
+        justify-content:center ;
+    }
+    .searchList2{
+        display: none;
+        width: 100%;
+        position: absolute;
+        list-style: none;
+        right: 0;
+    }
+    .list1:hover > .searchList2{
+        display: block;
+    }
+    .list1{
+        width: 100px;
+        padding: 10px;
+        border:3px solid deeppink;
+        position: relative;
+        margin-right: 10px;
+        cursor: pointer;
+    }
+    .list2{ padding: 10px;
+        background: gray;
+        cursor: pointer;
+    }
+    .list2:hover{
+        background: snow;
+    }
+    .containet_about{
+        width: 100%;
+    }
+}
 @media screen and (max-width: 720px){
     .head{
         font-size: 10px;
@@ -92,6 +133,27 @@
     .text_with_person{
         font-size: 14px;
     }
+    .albums,.one_of_the_catalog {
+        width: 100%;
+        flex-wrap: wrap;
+    }
+    .albums{
+        padding: 20px;
+        justify-content: center;
+    }
+    .one_photo{
+        width: 80%;
+        margin-bottom: 10px;
+    }
+    .searchList{
+        display: none
+    }
+    .searchListHidden{
+        display: block
+    }
+    .searchListHidden{
+        width: 400px;
+    }
 }
 @media screen and (max-width: 420px){
     section{
@@ -103,7 +165,21 @@
     .img_with_person{
         height: 200px;
     }
-
+    .contant_footer{
+        flex-wrap: wrap;
+    }
+    .search{
+        width: 80%;
+    }
+    .searchListHidden{
+        width: 80%;
+    }
+    .list2Hidden{
+        font-size: 10px;
+    }
+    .containet_about p{
+        font-size: 13px;
+    }
 }
 @media screen and (max-width: 320px){
     section{
@@ -115,5 +191,7 @@
     .img_with_person{
         height: 200px;
     }
-
+    .containet_about p{
+        font-size: 11px;
+    }
 }

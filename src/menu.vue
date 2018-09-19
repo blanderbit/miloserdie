@@ -3,10 +3,10 @@
         <div class="m-container">
             <ion-icon name="menu" class="icon pointer" @click="open"></ion-icon>
             <ul class="lists " @click="open">
-                <li><a href="#">Главная</a></li>
-                <li><a href="#">Рубрики</a></li>
-                <li><a href="#">О нас</a></li>
-                <li><a href="#">Как помочь</a></li>
+                <li><a href="#" @click.prevent="to('main')">Главная</a></li>
+                <li><a href="#" @click.prevent="to('catalogs')">Рубрики</a></li>
+                <li><a href="#" @click.prevent="to('about-us')">О нас</a></li>
+                <li><a href="#" @click.prevent="to('helps')">Как помочь</a></li>
                 <li><a href="#">Контакты</a></li>
             </ul>
             <div class="clear"></div>
@@ -47,7 +47,10 @@
                 else{
                     elem.style.borderBottom = '1px solid lightgray'
                 }
-            }
+            },
+            to:function(name){
+                this.$router.push({name:name})
+            },
         },
         mounted(){
             window.addEventListener('resize',this.hendleResize)
