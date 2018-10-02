@@ -60,6 +60,18 @@
                 let main_url = url.indexOf('https://')
                 let main_url2 = url.indexOf('http://')
                 return main_url == 0 || main_url2 == 0 ? url: window.location.origin + url.substr(1,url.length)
+            },
+            cssPadding:function(){
+                let bodyOffsetWidth = document.body.offsetWidth
+                let bodyScrollWidth = window.innerWidth
+                if(bodyScrollWidth - bodyOffsetWidth < 16){
+                    let head_footer = document.querySelector('footer .head_footer')
+                    let help_person_container = document.querySelector('.help_person_container')
+                    let help_main_container = document.querySelector('.help_main_container')
+                    help_person_container.style.padding = '0 20px 0 20px'
+                    head_footer.style.padding = '0'
+                    help_main_container.style.padding = '0 20px 30px 20px'
+                }
             }
         },
         created(){
@@ -75,6 +87,10 @@
             this.information =  sessionStorage.getItem('information')
             this.tx =  sessionStorage.getItem('tx')
             this.allPhoto =  sessionStorage.getItem('allPhoto').split(',')
+        },
+        mounted(){
+            //            css
+            this.cssPadding()
         },
         components:{
             navbar:navbar,

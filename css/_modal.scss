@@ -1,0 +1,49 @@
+.modal_main{
+  position: absolute;
+  right: 0;
+  top:0;
+  width: 90px;
+  height: 50px;
+  transition: all 2s;
+  z-index: 1000;
+
+}
+.active{
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.56);
+}
+.modal_main{
+  .button_modal{
+    padding: 10px;
+    font-style: italic;
+    border: 2px solid deeppink;
+    color: pink;
+    font-weight: 700;
+    border-radius: 20px;
+    cursor: pointer;
+    background: white;
+    opacity: 0.4;
+
+  }
+  .button_modal:hover{
+    border: 2px solid pink;
+    color: deeppink;
+    opacity: 1;
+  }
+  .modal{
+    transition: all 1s;
+    background: rgb(240, 24, 218);
+    color:white
+  }
+  .active_modal{
+    padding: 20px;
+    width: 30%;
+    font-size: inherit;
+  }
+  .close_modal{
+    padding: 0;
+    width: 0;
+    font-size: 0;
+  }
+}

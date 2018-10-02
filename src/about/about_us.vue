@@ -2,7 +2,7 @@
     <div class="main">
         <navbar></navbar>
         <section id="about_us">
-            <div class="containet_about">
+            <div class="containet_about" @wheel="opos">
                 <h3>{{inf.h1}}</h3>
                 <img :src="img.i1" style="width: 70%;">
                 <p>{{inf.p1}}</p>
@@ -23,9 +23,12 @@
     </div>
 </template>
 <style>
+    .containet_about p{
+        transition: all 1s;
+        opacity: 0;
+    }
 </style>
 <script>
-    console.log(dogArr)
     import navbar from '../navbar.vue'
     import footer from '../footer.vue'
     import help from '../main/help.vue'
@@ -90,16 +93,59 @@
                 let main_url = url.indexOf('https://')
                 let main_url2 = url.indexOf('http://')
                 return main_url == 0 || main_url2 == 0 ? url: window.location.origin + url.substr(1,url.length)
+            },
+            opos:function(){
+                let centerX = document.documentElement.clientWidth / 2;
+                let centerY = document.documentElement.clientHeight / 1.4;
+                let elem = document.elementFromPoint(centerX, centerY);
+                if(elem.tagName == 'P'){
+                    elem.style.opacity = '1'
+                }
+            },
+            opos_static:function(){
+                let centerY = document.documentElement.clientHeight / 1.2;
+                let app_P = document.querySelector('.containet_about').querySelectorAll('p')
+                for(let i = 0; i < app_P.length; i++) {
+                    if (window.innerHeight < 1880) {
+                        if (app_P[i].getBoundingClientRect().bottom < centerY || window.pageYOffset > centerY) {
+                            app_P[i].style.opacity = '1'
+                        }
+                    }
+                    else {
+                        app_P[i].style.opacity = '1'
+                    }
+                }
+            },
+            cssPadding:function(){
+                let bodyOffsetWidth = document.body.offsetWidth
+                let bodyScrollWidth = window.innerWidth
+                if(bodyScrollWidth - bodyOffsetWidth < 16){
+                    let head_footer = document.querySelector('footer .head_footer')
+                    let containet_about = document.querySelector('#about_us .containet_about')
+                    head_footer.style.padding = '0'
+                    containet_about.style.padding = '0 10px 0 10px'
+                }
             }
         },
-        created(){
+        mounted(){
             window.scrollTo(0,0)
+            let il = this
+            setTimeout(function(){
+                il.opos_static()
+            },1000)
+            //            css
+            this.cssPadding()
             sessionStorage.setItem('path',this.$router.history.current.name)
+            window.addEventListener('wheel',this.opos)
+            window.addEventListener('scroll',this.opos)
         },
         components:{
             navbar:navbar,
             footer_my:footer,
+        },
+        beforeDestroy(){
+            window.removeEventListener('scroll',this.scrolls)
+            window.removeEventListener('wheel',this.scrolls)
         }
     }
-
 </script>

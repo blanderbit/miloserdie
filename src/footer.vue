@@ -13,10 +13,10 @@
                     </span>
                 </div>
                 <div>
-                    <a href="#">
+                    <a href="https://vk.com/miloserdie_zp">
                         <ion-icon name="logo-vk"></ion-icon>
                     </a>
-                    <a href="#">
+                    <a href="https://www.facebook.com/GrupaMiloserdie/">
                         <ion-icon name="logo-facebook"></ion-icon>
                     </a>
                 </div>
@@ -39,11 +39,5 @@
             return{
             }
         },
-        metods:{
-
-        },
-        mounted(){
-            window.addEventListener('scroll',this.opysity)
-        }
     }
 </script>

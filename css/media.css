@@ -11,8 +11,12 @@
     .head_footer{
         width:auto;
     }
+    .head_footer{
+        padding: 0 20px 0 0;
+    }
 }
 @media screen and (max-width: 920px){
+
     .search{
         width: 100%;
         display: flex;
@@ -51,6 +55,7 @@
     }
     .containet_about{
         width: 100%;
+        padding: 20px 30px 0 10px;
     }
 }
 @media screen and (max-width: 720px){
@@ -62,12 +67,11 @@
     header .head a ion-icon{
         font-size: 15px;
     }
-    .lists > li{
-        float: none;
-    }
     .lists{
         position: absolute;
         text-align: left;
+        flex-direction: column;
+        background: white;
         width: 100%;
         left:-100%;
         border-bottom: 1px solid lightgray;
@@ -80,10 +84,6 @@
         right: 0px;
         top:0px;
     }
-    .lists > li{
-        list-style: none;
-        padding: 0px;
-    }
     .lists  a:hover{
         background: hotpink;
         color:white;
@@ -93,8 +93,8 @@
         box-sizing: border-box;
         display: inline-block;
     }
-    .m-container{
-        width: auto;
+    .lists li{
+        padding: 0;
     }
     .container_photo{
         height: 250px;
@@ -154,11 +154,61 @@
     .searchListHidden{
         width: 400px;
     }
+    .helps{
+        width: 100%;
+        text-align: justify;
+        padding: 0 40px 0 20px;
+    }
+    .helps h4{
+        text-align: center;
+    }
+    .helpsflex h5{
+        margin: 0;
+        padding: 0 20px 0 0;
+    }
+    .help_main_container_width .helps{
+        padding: 0 20px 0 0;
+    }
+    .helps p{
+        padding: 20px;
+        margin: 0;
+    }
+    .head_footer{
+        padding: 0 20px 0 0;
+    }
+    .helps ul{
+        width: 100vw;
+    }
+}
+@media screen and (max-width: 520px){
+    #tabs{
+        display: block;
+        padding-left: 0;
+    }
+    .infTabs{
+        width: 100vw;
+        padding: 20px 0;
+    }
+    .tabs li:last-child{
+        border-bottom:1px solid rgba(0, 0, 0, 0.72);
+    }
+    .tabs li{
+        padding: 20px;
+    }
+    .tabs{
+        display: block;
+        width: 100vw;
+    }
+    .button_modal{
+        left:0;
+        right: auto;
+    }
 }
 @media screen and (max-width: 420px){
     section{
-        width: 103%;
+        width: 100vw;
     }
+
     .containar_one {
         width: 60%;
     }
@@ -183,7 +233,7 @@
 }
 @media screen and (max-width: 320px){
     section{
-        width: 105%;
+        width: 100vw;
     }
     .containar_one {
         width: 70%;

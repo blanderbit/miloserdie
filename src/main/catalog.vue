@@ -12,7 +12,6 @@
             one.tx,
             one.allPhoto)">
                 <div class="containe_catalog_photo" :style="{background:'url('+one.photo+')'}">
-
                 </div>
                 <div>
                     <span>{{one.name}}</span>

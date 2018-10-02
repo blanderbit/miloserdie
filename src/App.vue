@@ -1,17 +1,27 @@
 <template>
-  <div id="app">
+  <div id="app" style="overflow-x: hidden;">
+      <div class="button_modal" @click="open">
+          <span>{{spans}}</span>{{button_text}}
+      </div>
+      <modal :valueDot="values" @modal="modal($event)"></modal>
       <router-view></router-view>
   </div>
 </template>
-
 <script>
-
+  import modal from './modal.vue'
   export default {
      name: 'app',
          data () {
              return {
+                 container:false,
+                 values:false,
+                 button_text:'?',
+                 spans:'Как помочь'
          }
      },
+      components:{
+          modal:modal
+      },
       methods:{
           to:function(name,name2){
               if(name2 != undefined) {
@@ -22,8 +32,22 @@
                   }else{
                       this.$router.push({name: name})
                   }
-
               }
+          },
+          open:function(){
+              let overlow =  document.body
+              overlow.style.overflowY = 'hidden';
+              this.values = true
+              this.container= true
+          },
+          modal:function(value){
+              this.values = value
+              this.container= value
+          }
+      },
+      watch:{
+          '$route'(to,from){
+              localStorage.setItem('path',to.name)
           }
       },
       created:function(){

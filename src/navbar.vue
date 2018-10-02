@@ -12,12 +12,12 @@
                 </div> 0637063585
                 <ul>
                     <li>
-                        <a href="#">
+                        <a href="https://vk.com/miloserdie_zp">
                             <ion-icon name="logo-vk"></ion-icon>
                         </a>
                     </li>
                     <li>
-                        <a href="#">
+                        <a href="https://www.facebook.com/GrupaMiloserdie/">
                             <ion-icon name="logo-facebook"></ion-icon>
                         </a>
                     </li>

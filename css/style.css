@@ -65,25 +65,26 @@ header .head a:hover{
     padding: 0px;
     margin:0px;
     background: white;
+    display: flex;
+    justify-content: center;
 }
 .m-container{
-    width: 755px;
-    margin-left:auto;
-    margin-right:auto;
     margin-bottom: -1px;
     margin-top: -2px;
     transition: all 1.2s;
     box-sizing: border-box;
+
+
 }
 .lists{
     z-index: 1000;
     padding: 0px;
     margin:0px;
     transition: all 0.4s;
-    background: white;
+    display: flex;
 }
 .lists > li{
-    float: left;
+    /*float: left;*/
     list-style: none;
     padding: 20px;
 }
@@ -99,6 +100,10 @@ header .head a:hover{
     background: hotpink;
     color:white;
 }
+.lists .activeLiNav{
+    background: hotpink;
+    color:white;
+}
 .clear{
     clear: both;
 }
@@ -111,8 +116,8 @@ header .head a:hover{
 }
 /*containerPhoto*/
 section{
-    width: 100%;
-    padding:  0 0 20px;
+    width: 100vw;
+
     display: flex;
     align-items: center;
     justify-content: center;
@@ -123,10 +128,12 @@ section{
     background-size: cover!important;
     background-position: center!important;
     background-attachment: fixed!important;
+    background-repeat: no-repeat!important;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 20px;
+    padding: 20px 30px 0 10px;
+    transition: all 1s;
 }
 .container_photo_text{
     width:auto;
@@ -155,7 +162,7 @@ section{
 }
 .containar_one{
     width: 20%;
-    padding: 10px;
+    padding: 0 30px 10px 10px;
     transition: all 200ms;
     flex-grow: 2;
     flex-wrap: wrap;
@@ -195,6 +202,7 @@ section{
 /*message*/
 #massage{
     flex-direction: column;
+    margin-bottom: 20px;
 }
 .massage_before_catalog, .massage_after_main_photo{
     width: 100%;
@@ -208,12 +216,12 @@ section{
 }
 .after_main_photo{
     width: 1150px;
-    padding: 20px;
+    padding: 20px 30px 0 10px;
 }
 .before_catalog{
     width: 1150px;
     text-align: justify;
-    padding: 20px;
+    padding: 0 30px 0 10px;
     text-indent: 40px;
 }
 .before_catalog h4{
@@ -221,7 +229,7 @@ section{
 }
 /*footer*/
 footer{
-    width: 100%;
+    width: 100vw;
     background: black;
     color:white;
     box-shadow: 1px 1px 1px 5px black;
@@ -245,7 +253,6 @@ footer{
     display: flex;
     justify-content: space-between;
     font-size: 15px;
-
 }
 .head_footer hr{
     width: 100%;
@@ -290,13 +297,13 @@ footer{
 }
 .help_main_container_width{
     background: rgba(0, 0, 0, 0.72);
-    width: 100%;
+    width: 100vw;
     color:pink;
     display: flex;
     justify-content: center;
 }
 .help_main_container{
-    padding: 20px;
+    padding: 0 30px 30px 10px;
     text-align: center;
     width: 900px;
 }
@@ -308,7 +315,7 @@ footer{
     display: flex;
     flex-direction: column;
     color: black;
-    padding: 20px;
+    padding: 0 30px 0 10px;
 }
 .block_with_person{
     display: flex;
@@ -317,6 +324,8 @@ footer{
     margin-bottom: 20px;
 }
 .img_with_person{
+    transition: all 1s;
+    position: relative;
     height: 400px;
     width:100%;
     background-size: contain!important;
@@ -324,6 +333,8 @@ footer{
     background-position: center!important;
 }
 .text_with_person{
+    transition: all 1s;
+    position: relative;
     width:100%;
     text-align: justify;
 }
@@ -365,6 +376,7 @@ footer{
     width: 900px;
     display: flex;
     justify-content: center;
+    padding:20px 40px 0 10px;
 }
 .searchList,.searchListHidden{
     display: flex;
@@ -425,7 +437,7 @@ footer{
 }
 
 /*about_us*/
-.containet_about{
+.containet_about,.helpsContainer{
     width: 900px;
     padding: 20px;
 }
@@ -437,3 +449,109 @@ footer{
 .containet_about img {
     margin-right: 10px;
 }
+/*helps*/
+#helps{
+    flex-direction: column;
+}
+.helpsflex{
+    display: flex;
+    flex-direction: column;
+}
+.helpsflex h5{
+    padding: 20px;
+    margin: 0;
+}
+.helps{
+    width: 70vw;
+    padding: 20px;
+}
+.containerHelps{
+    display: flex;
+    justify-content: center;
+}
+.helps ul{
+    width: auto;
+    padding: 0;
+    counter-reset: li;
+}
+.helps ul li{
+    text-align: left;
+    cursor:pointer;
+    padding: 20px;
+    list-style: none;
+    background: rgb(255, 214, 250);
+    color:deeppink;
+}
+.helps ul li:before{
+    content: counter(li)')';
+    counter-increment: li;
+    margin-right: 5px;
+    color:black;
+}
+.helps ul li:hover{
+    color: pink;
+    background:deeppink;
+}
+/*tabs*/
+#tabs{
+    display: flex;flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+.tabs{
+    margin: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    width: 367px;
+    padding-left: 0;
+}
+.infTabs{
+    background: white;
+    color: red;
+    width: 447px;
+    padding: 20px;
+}
+.tabs li{
+    padding: 20px 40px;
+    background: deeppink;
+    color:white;
+    font-weight: 700;
+    cursor:pointer
+}
+.tabs .activeTabs{
+    background: white;
+    color:deeppink;
+}
+/*botton-modaL*/
+.button_modal{
+    z-index: 999;
+    position: fixed;
+    right: 0;
+    top:10em;
+    font-style: italic;
+    border: 2px solid deeppink;
+    font-weight: 700;
+    cursor: pointer;
+    background: white;
+    color: deeppink;
+    opacity: 0.8;
+    padding: 10px 20px;
+    transition: all 2s;
+    border-radius:50%;
+}
+.button_modal span{
+    font-size:0px;
+    transition: all 1s;
+}
+.button_modal:hover{
+    border: 2px solid pink;
+    color: deeppink;
+    opacity: 1;
+    border-radius: 20px;
+}
+.button_modal:hover span{
+    font-size:inherit;
+}
+
