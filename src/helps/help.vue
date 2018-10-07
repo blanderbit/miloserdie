@@ -2,6 +2,8 @@
     <div class="main">
         <navs></navs>
         <section id="helps">
+            <h3>Просто посмотрите &#8595</h3>
+            <slide></slide>
             <div class="helps">
                 <h4>Как помочь?</h4>
                 <p>{{inf.one}}</p>
@@ -33,6 +35,7 @@
 import navbar from '../navbar.vue'
 import footer from '../footer.vue'
 import tabs from './tabs.vue'
+import slide from './transitionSlider.vue'
 export default {
     name: 'app',
     data () {
@@ -74,7 +77,8 @@ export default {
     components:{
         navs:navbar,
         foots:footer,
-        tabs:tabs
+        tabs:tabs,
+        slide:slide
     }
 }
 </script>

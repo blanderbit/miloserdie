@@ -1,5 +1,9 @@
 <template>
   <div id="app" style="overflow-x: hidden;">
+      <div class="side">
+          <ion-icon @click="scrollTo('+')" v-if="down" name="arrow-down"></ion-icon>
+          <ion-icon @click="scrollTo('-')" v-if="up" name="arrow-up"></ion-icon>
+      </div>
       <div class="button_modal" @click="open">
           <span>{{spans}}</span>{{button_text}}
       </div>
@@ -7,6 +11,31 @@
       <router-view></router-view>
   </div>
 </template>
+<style>
+    .side{
+        position: fixed;
+        right: 0;
+        top:45%;
+        display: flex;
+        z-index: 1000;
+        flex-direction: column-reverse;
+    }
+    .side ion-icon {
+        padding: 10px;
+        border: 1px solid white;
+        color: black;
+        border-radius: 50%;
+        cursor: pointer;
+        background: pink;
+        opacity: 0.6;
+    }
+    .side ion-icon:hover{
+        border: 1px solid black;
+        color: deeppink;
+        background: white;
+        /*opacity: 1;*/
+    }
+</style>
 <script>
   import modal from './modal.vue'
   export default {
@@ -16,7 +45,11 @@
                  container:false,
                  values:false,
                  button_text:'?',
-                 spans:'Как помочь'
+                 spans:'Как помочь',
+                 step: 100,
+                 up: false,
+                 down:true,
+                 downYpage:null
          }
      },
       components:{
@@ -43,7 +76,41 @@
           modal:function(value){
               this.values = value
               this.container= value
+          },
+          scrollTo:function (simvol) {
+              let simvols = simvol
+              let scroll = document.body.scrollHeight
+              let pix = window.pageYOffset;
+              let steps = this.step;
+              requestAnimationFrame(to);
+              function to(){
+                  if(simvols == '+'){
+                      pix = pix + steps;
+                      window.scrollTo(0,pix);
+                      if(pix < scroll){
+                          requestAnimationFrame(to);
+                      }
+                  } else {
+                      pix = pix - steps;
+                      window.scrollTo(0,pix);
+                      if(pix > 0){
+                          requestAnimationFrame(to);
+                      }
+                  }
+              }
+          },
+          scroller:function(){
+              let scroll = window.pageYOffset
+              scroll > 0?this.up = true:this.up = false
+              scroll > this.downYpage? this.down = false:this.down = true
           }
+      },
+      mounted(){
+          let down = document.querySelector('footer').getBoundingClientRect().bottom
+          this.downYpage = down -  window.innerHeight
+          window.scrollTo(0,0)
+          window.addEventListener('wheel',this.scroller)
+          window.addEventListener('scroll',this.scroller)
       },
       watch:{
           '$route'(to,from){
@@ -69,7 +136,7 @@
           }else{
               this.$router.push({name: 'main'})
           }
-     }
+     },
 }
 </script>
 

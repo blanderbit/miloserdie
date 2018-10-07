@@ -6,6 +6,7 @@ import rubricsOne from './rubrics/rubricsOne.vue'
 import catalog from './rubrics/rubricks.vue'
 import about from './about/about_us.vue'
 import helps from './helps/help.vue'
+import generator from './generator/generator.vue'
 Vue.use(VueRouter)
 
 let linkcss = document.querySelectorAll('link')
@@ -30,6 +31,7 @@ const router = new VueRouter({
         {path: '/catalogs',name:'catalogs', component: catalog},
         {path: '/about-us',name:'about-us', component: about},
         {path: '/helps',name:'helps', component: helps},
+        {path: '/generator',name:'generator', component: generator},
     ],
 })
 
